@@ -24,9 +24,10 @@ namespace ProyectoFinal_login
 
         private void databainvetario()
         {
-            String consulta = "SELECTED * FROM compania_trabjadores.inventario";
+            //hecho por jefferson
+            string consulta = "select * from  compañia.inventario;";
             MySqlConnection con = new MySqlConnection(conString);
-
+            MySqlCommand command = new MySqlCommand(consulta, con);
             try
             {
                 con.Open();
@@ -34,10 +35,12 @@ namespace ProyectoFinal_login
                 adapter.SelectCommand = command;
                 DataTable dt = new DataTable();
                 adapter.Fill(dt);
-                //tblinvetario.DataTable = dt;
+                tablaPrinciapal.DataSource = dt;
                 con.Close();
-            }catch(Exception ex){
-                MessageBox.Show("Error al leer datos " + ex.Message);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al leer data " + ex.Message);
             }
 
         }
@@ -49,7 +52,7 @@ namespace ProyectoFinal_login
 
         private void button3_Click(object sender, EventArgs e)
         {
-
+            databainvetario();
         }
 
         private void button5_Click(object sender, EventArgs e)
