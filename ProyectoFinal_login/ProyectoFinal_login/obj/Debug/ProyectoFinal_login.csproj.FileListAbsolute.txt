@@ -34,3 +34,39 @@ C:\Users\GAMING GIGABYTE\source\repos\ProyectoFinal_login\ProyectoFinal_login\bi
 C:\Users\GAMING GIGABYTE\source\repos\ProyectoFinal_login\ProyectoFinal_login\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
 C:\Users\GAMING GIGABYTE\source\repos\ProyectoFinal_login\ProyectoFinal_login\obj\Debug\ProyectoFinal_login.csproj.CopyComplete
 C:\Users\GAMING GIGABYTE\source\repos\ProyectoFinal_login\ProyectoFinal_login\obj\Debug\ProyectoFinal_login.VentanaPrincipal.resources
+E:\proyectoFinal\PROYECTOFINALPROGA1\ProyectoFinal_login\ProyectoFinal_login\bin\Debug\ProyectoFinal_login.exe.config
+E:\proyectoFinal\PROYECTOFINALPROGA1\ProyectoFinal_login\ProyectoFinal_login\bin\Debug\ProyectoFinal_login.exe
+E:\proyectoFinal\PROYECTOFINALPROGA1\ProyectoFinal_login\ProyectoFinal_login\bin\Debug\ProyectoFinal_login.pdb
+E:\proyectoFinal\PROYECTOFINALPROGA1\ProyectoFinal_login\ProyectoFinal_login\bin\Debug\BouncyCastle.Crypto.dll
+E:\proyectoFinal\PROYECTOFINALPROGA1\ProyectoFinal_login\ProyectoFinal_login\bin\Debug\Google.Protobuf.dll
+E:\proyectoFinal\PROYECTOFINALPROGA1\ProyectoFinal_login\ProyectoFinal_login\bin\Debug\K4os.Compression.LZ4.dll
+E:\proyectoFinal\PROYECTOFINALPROGA1\ProyectoFinal_login\ProyectoFinal_login\bin\Debug\K4os.Compression.LZ4.Streams.dll
+E:\proyectoFinal\PROYECTOFINALPROGA1\ProyectoFinal_login\ProyectoFinal_login\bin\Debug\K4os.Hash.xxHash.dll
+E:\proyectoFinal\PROYECTOFINALPROGA1\ProyectoFinal_login\ProyectoFinal_login\bin\Debug\MySql.Data.dll
+E:\proyectoFinal\PROYECTOFINALPROGA1\ProyectoFinal_login\ProyectoFinal_login\bin\Debug\System.Buffers.dll
+E:\proyectoFinal\PROYECTOFINALPROGA1\ProyectoFinal_login\ProyectoFinal_login\bin\Debug\System.Memory.dll
+E:\proyectoFinal\PROYECTOFINALPROGA1\ProyectoFinal_login\ProyectoFinal_login\bin\Debug\System.Numerics.Vectors.dll
+E:\proyectoFinal\PROYECTOFINALPROGA1\ProyectoFinal_login\ProyectoFinal_login\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+E:\proyectoFinal\PROYECTOFINALPROGA1\ProyectoFinal_login\ProyectoFinal_login\bin\Debug\Ubiety.Dns.Core.dll
+E:\proyectoFinal\PROYECTOFINALPROGA1\ProyectoFinal_login\ProyectoFinal_login\bin\Debug\ZstdNet.dll
+E:\proyectoFinal\PROYECTOFINALPROGA1\ProyectoFinal_login\ProyectoFinal_login\bin\Debug\Google.Protobuf.pdb
+E:\proyectoFinal\PROYECTOFINALPROGA1\ProyectoFinal_login\ProyectoFinal_login\bin\Debug\Google.Protobuf.xml
+E:\proyectoFinal\PROYECTOFINALPROGA1\ProyectoFinal_login\ProyectoFinal_login\bin\Debug\K4os.Compression.LZ4.xml
+E:\proyectoFinal\PROYECTOFINALPROGA1\ProyectoFinal_login\ProyectoFinal_login\bin\Debug\K4os.Compression.LZ4.Streams.xml
+E:\proyectoFinal\PROYECTOFINALPROGA1\ProyectoFinal_login\ProyectoFinal_login\bin\Debug\K4os.Hash.xxHash.xml
+E:\proyectoFinal\PROYECTOFINALPROGA1\ProyectoFinal_login\ProyectoFinal_login\bin\Debug\MySql.Data.xml
+E:\proyectoFinal\PROYECTOFINALPROGA1\ProyectoFinal_login\ProyectoFinal_login\bin\Debug\System.Buffers.xml
+E:\proyectoFinal\PROYECTOFINALPROGA1\ProyectoFinal_login\ProyectoFinal_login\bin\Debug\System.Memory.xml
+E:\proyectoFinal\PROYECTOFINALPROGA1\ProyectoFinal_login\ProyectoFinal_login\bin\Debug\System.Numerics.Vectors.xml
+E:\proyectoFinal\PROYECTOFINALPROGA1\ProyectoFinal_login\ProyectoFinal_login\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+E:\proyectoFinal\PROYECTOFINALPROGA1\ProyectoFinal_login\ProyectoFinal_login\obj\Debug\ProyectoFinal_login.csproj.AssemblyReference.cache
+E:\proyectoFinal\PROYECTOFINALPROGA1\ProyectoFinal_login\ProyectoFinal_login\obj\Debug\ProyectoFinal_login.csproj.SuggestedBindingRedirects.cache
+E:\proyectoFinal\PROYECTOFINALPROGA1\ProyectoFinal_login\ProyectoFinal_login\obj\Debug\ProyectoFinal_login.Form1.resources
+E:\proyectoFinal\PROYECTOFINALPROGA1\ProyectoFinal_login\ProyectoFinal_login\obj\Debug\ProyectoFinal_login.Entrada.resources
+E:\proyectoFinal\PROYECTOFINALPROGA1\ProyectoFinal_login\ProyectoFinal_login\obj\Debug\ProyectoFinal_login.Properties.Resources.resources
+E:\proyectoFinal\PROYECTOFINALPROGA1\ProyectoFinal_login\ProyectoFinal_login\obj\Debug\ProyectoFinal_login.VentanaPrincipal.resources
+E:\proyectoFinal\PROYECTOFINALPROGA1\ProyectoFinal_login\ProyectoFinal_login\obj\Debug\ProyectoFinal_login.csproj.GenerateResource.cache
+E:\proyectoFinal\PROYECTOFINALPROGA1\ProyectoFinal_login\ProyectoFinal_login\obj\Debug\ProyectoFinal_login.csproj.CoreCompileInputs.cache
+E:\proyectoFinal\PROYECTOFINALPROGA1\ProyectoFinal_login\ProyectoFinal_login\obj\Debug\ProyectoFinal_login.csproj.CopyComplete
+E:\proyectoFinal\PROYECTOFINALPROGA1\ProyectoFinal_login\ProyectoFinal_login\obj\Debug\ProyectoFinal_login.exe
+E:\proyectoFinal\PROYECTOFINALPROGA1\ProyectoFinal_login\ProyectoFinal_login\obj\Debug\ProyectoFinal_login.pdb

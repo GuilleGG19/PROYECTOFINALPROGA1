@@ -25,7 +25,7 @@ namespace ProyectoFinal_login
         private void databainvetario()
         {
             //hecho por jefferson
-            string consulta = "select * from  compañia.inventario;";
+            string consulta = "select * from  compania_trabajadores.inventario;";
             MySqlConnection con = new MySqlConnection(conString);
             MySqlCommand command = new MySqlCommand(consulta, con);
             try
@@ -40,7 +40,7 @@ namespace ProyectoFinal_login
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error al leer data " + ex.Message);
+                MessageBox.Show("Error al leer datos " + ex.Message);
             }
 
         }
@@ -71,6 +71,11 @@ namespace ProyectoFinal_login
         }
 
         private void VentanaPrincipal_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tablaPrinciapal_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
         }

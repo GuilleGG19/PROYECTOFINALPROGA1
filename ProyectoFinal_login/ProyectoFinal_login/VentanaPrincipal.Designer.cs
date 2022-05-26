@@ -51,11 +51,6 @@
             this.label4 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
             this.tablaPrinciapal = new System.Windows.Forms.DataGridView();
-            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Producto = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Precio = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Total = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.button10 = new System.Windows.Forms.Button();
             this.button9 = new System.Windows.Forms.Button();
             this.button8 = new System.Windows.Forms.Button();
@@ -296,42 +291,12 @@
             this.tablaPrinciapal.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.tablaPrinciapal.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
             this.tablaPrinciapal.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.tablaPrinciapal.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.ID,
-            this.Producto,
-            this.Cantidad,
-            this.Precio,
-            this.Total});
             this.tablaPrinciapal.Location = new System.Drawing.Point(11, 44);
             this.tablaPrinciapal.Name = "tablaPrinciapal";
             this.tablaPrinciapal.RowHeadersVisible = false;
             this.tablaPrinciapal.Size = new System.Drawing.Size(955, 342);
             this.tablaPrinciapal.TabIndex = 4;
-            // 
-            // ID
-            // 
-            this.ID.HeaderText = "ID";
-            this.ID.Name = "ID";
-            // 
-            // Producto
-            // 
-            this.Producto.HeaderText = "Producto";
-            this.Producto.Name = "Producto";
-            // 
-            // Cantidad
-            // 
-            this.Cantidad.HeaderText = "Precio";
-            this.Cantidad.Name = "Cantidad";
-            // 
-            // Precio
-            // 
-            this.Precio.HeaderText = "Cantidad";
-            this.Precio.Name = "Precio";
-            // 
-            // Total
-            // 
-            this.Total.HeaderText = "Subtotal";
-            this.Total.Name = "Total";
+            this.tablaPrinciapal.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.tablaPrinciapal_CellContentClick);
             // 
             // button10
             // 
@@ -573,10 +538,5 @@
         private System.Windows.Forms.Button button8;
         private System.Windows.Forms.DataGridView tablaPrinciapal;
         private System.Windows.Forms.ComboBox comboBox3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ID;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Producto;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Cantidad;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Precio;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Total;
     }
 }
