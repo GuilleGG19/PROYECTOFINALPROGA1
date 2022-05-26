@@ -69,5 +69,10 @@ namespace ProyectoFinal_login
             comboBox2.Items.Add("Efectivo");
             comboBox2.Items.Add("Tarjtea");*/
         }
+
+        private void VentanaPrincipal_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

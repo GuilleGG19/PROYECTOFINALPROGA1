@@ -36,6 +36,7 @@
             this.button1 = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
+            this.comboBox3 = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.textBox3 = new System.Windows.Forms.TextBox();
@@ -49,6 +50,12 @@
             this.button4 = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.tablaPrinciapal = new System.Windows.Forms.DataGridView();
+            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Producto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Precio = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Total = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.button10 = new System.Windows.Forms.Button();
             this.button9 = new System.Windows.Forms.Button();
             this.button8 = new System.Windows.Forms.Button();
@@ -67,13 +74,6 @@
             this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.button6 = new System.Windows.Forms.Button();
             this.button7 = new System.Windows.Forms.Button();
-            this.tablaPrinciapal = new System.Windows.Forms.DataGridView();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
-            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Producto = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Precio = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Total = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -171,6 +171,15 @@
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(979, 94);
             this.panel5.TabIndex = 14;
+            // 
+            // comboBox3
+            // 
+            this.comboBox3.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox3.FormattingEnabled = true;
+            this.comboBox3.Location = new System.Drawing.Point(170, 45);
+            this.comboBox3.Name = "comboBox3";
+            this.comboBox3.Size = new System.Drawing.Size(209, 21);
+            this.comboBox3.TabIndex = 13;
             // 
             // label1
             // 
@@ -281,6 +290,48 @@
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(981, 404);
             this.panel4.TabIndex = 13;
+            // 
+            // tablaPrinciapal
+            // 
+            this.tablaPrinciapal.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.tablaPrinciapal.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
+            this.tablaPrinciapal.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.tablaPrinciapal.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.ID,
+            this.Producto,
+            this.Cantidad,
+            this.Precio,
+            this.Total});
+            this.tablaPrinciapal.Location = new System.Drawing.Point(11, 44);
+            this.tablaPrinciapal.Name = "tablaPrinciapal";
+            this.tablaPrinciapal.RowHeadersVisible = false;
+            this.tablaPrinciapal.Size = new System.Drawing.Size(955, 342);
+            this.tablaPrinciapal.TabIndex = 4;
+            // 
+            // ID
+            // 
+            this.ID.HeaderText = "ID";
+            this.ID.Name = "ID";
+            // 
+            // Producto
+            // 
+            this.Producto.HeaderText = "Producto";
+            this.Producto.Name = "Producto";
+            // 
+            // Cantidad
+            // 
+            this.Cantidad.HeaderText = "Precio";
+            this.Cantidad.Name = "Cantidad";
+            // 
+            // Precio
+            // 
+            this.Precio.HeaderText = "Cantidad";
+            this.Precio.Name = "Precio";
+            // 
+            // Total
+            // 
+            this.Total.HeaderText = "Subtotal";
+            this.Total.Name = "Total";
             // 
             // button10
             // 
@@ -440,57 +491,6 @@
             this.button7.Text = "Cancelar";
             this.button7.UseVisualStyleBackColor = true;
             // 
-            // tablaPrinciapal
-            // 
-            this.tablaPrinciapal.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.tablaPrinciapal.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
-            this.tablaPrinciapal.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.tablaPrinciapal.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.ID,
-            this.Producto,
-            this.Cantidad,
-            this.Precio,
-            this.Total});
-            this.tablaPrinciapal.Location = new System.Drawing.Point(6, 41);
-            this.tablaPrinciapal.Name = "tablaPrinciapal";
-            this.tablaPrinciapal.RowHeadersVisible = false;
-            this.tablaPrinciapal.Size = new System.Drawing.Size(955, 342);
-            this.tablaPrinciapal.TabIndex = 4;
-            // 
-            // comboBox3
-            // 
-            this.comboBox3.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Location = new System.Drawing.Point(170, 45);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(209, 21);
-            this.comboBox3.TabIndex = 13;
-            // 
-            // ID
-            // 
-            this.ID.HeaderText = "ID";
-            this.ID.Name = "ID";
-            // 
-            // Producto
-            // 
-            this.Producto.HeaderText = "Producto";
-            this.Producto.Name = "Producto";
-            // 
-            // Cantidad
-            // 
-            this.Cantidad.HeaderText = "Precio";
-            this.Cantidad.Name = "Cantidad";
-            // 
-            // Precio
-            // 
-            this.Precio.HeaderText = "Cantidad";
-            this.Precio.Name = "Precio";
-            // 
-            // Total
-            // 
-            this.Total.HeaderText = "Subtotal";
-            this.Total.Name = "Total";
-            // 
             // VentanaPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -517,6 +517,7 @@
             this.Controls.Add(this.panel1);
             this.Name = "VentanaPrincipal";
             this.Text = "VentanaPrincipal";
+            this.Load += new System.EventHandler(this.VentanaPrincipal_Load);
             this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel3.ResumeLayout(false);

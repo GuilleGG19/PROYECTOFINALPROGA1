@@ -53,7 +53,7 @@ namespace ProyectoFinal_login
                     this.Hide();
                 }
             }*/
-
+            //Hecho por Jhonatan
             Form1 Entrada = new Form1();
             try
             {
