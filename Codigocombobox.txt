@@ -1,0 +1,14 @@
+ private void VentanaPrincipal_Load(object sender, EventArgs e)
+        {
+            string consulta = "SELECT * FROM compania_trabajadores.inventario";
+            MySqlConnection con = new MySqlConnection(conString);
+            MySqlCommand command = new MySqlCommand(consulta, con);
+            MySqlCommand comando = new MySqlCommand("SELECT * FROM compania_trabajadores.inventario", con);
+            con.Open();
+            MySqlDataReader registro = comando.ExecuteReader();
+            while (registro.Read())
+            {
+                comboBox3.Items.Add(registro["producto"].ToString());
+            }
+            con.Close();
+        }
