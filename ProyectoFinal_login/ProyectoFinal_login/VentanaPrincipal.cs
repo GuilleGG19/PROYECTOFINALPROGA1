@@ -1,13 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
+﻿using MySql.Data.MySqlClient;
+using System;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using MySql.Data.MySqlClient;
 
 namespace ProyectoFinal_login
 {
@@ -17,16 +11,18 @@ namespace ProyectoFinal_login
         public VentanaPrincipal()
         {
             InitializeComponent();
+            cargar_datos_combo_box ();
+            tablaInventario.Hide();
         }
+        string[,] listaVenta = new string[200, 6];
+        int fila = 0;
 
-       String conString = "datasource=localhost;port=3306;username=root;";
-        private MySqlCommand command;
 
         private void databainvetario()
         {
             //hecho por jefferson
-            string consulta = "select * from  compania_trabajadores.inventario;";
-            MySqlConnection con = new MySqlConnection(conString);
+            string consulta = "select * from  compañia.inventario;";
+            MySqlConnection con = new MySqlConnection("datasource=localhost;port=3306;username=root;");
             MySqlCommand command = new MySqlCommand(consulta, con);
             try
             {
@@ -35,12 +31,12 @@ namespace ProyectoFinal_login
                 adapter.SelectCommand = command;
                 DataTable dt = new DataTable();
                 adapter.Fill(dt);
-                tablaPrinciapal.DataSource = dt;
+                tablaInventario.DataSource = dt;
                 con.Close();
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error al leer datos " + ex.Message);
+                MessageBox.Show("Error al leer data " + ex.Message);
             }
 
         }
@@ -52,6 +48,8 @@ namespace ProyectoFinal_login
 
         private void button3_Click(object sender, EventArgs e)
         {
+            tablaPrinciapal.Hide();
+            tablaInventario.Show();
             databainvetario();
         }
 
@@ -70,14 +68,154 @@ namespace ProyectoFinal_login
             comboBox2.Items.Add("Tarjtea");*/
         }
 
+        private void tablaInventario_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            tablaInventario.Hide();
+            tablaPrinciapal.Show();
+        }
+
+        private void comboBox3_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            MySqlConnection con = new MySqlConnection("datasource=localhost;port=3306;username=root;");
+            MySqlCommand comando = new MySqlCommand("SELECT * FROM  compañia.inventario", con);
+            con.Open();
+            MySqlDataReader registro = comando.ExecuteReader();
+
+            while (registro.Read())
+            {
+                comboBox3.Items.Add(registro["producto"].ToString());
+            }
+            con.Close();
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
         private void VentanaPrincipal_Load(object sender, EventArgs e)
         {
-
+            
+        }
+        private void cargar_datos_combo_box()
+        {
+            string conString = "datasource=localhost;port=3306;username=root;";
+            MySqlConnection con = new MySqlConnection(conString);
+            MySqlCommand comando = new MySqlCommand("SELECT * FROM compañia.inventario", con);
+            con.Open();
+            MySqlDataReader registro = comando.ExecuteReader();
+            while (registro.Read())
+            {
+                comboBox3.Items.Add(registro["producto"].ToString());
+            }
+            con.Close();
         }
 
-        private void tablaPrinciapal_CellContentClick(object sender, DataGridViewCellEventArgs e)
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            String seleccion_producto = comboBox3.SelectedItem.ToString();
+            string conString = "datasource=localhost;port=3306;username=root;";
+            MySqlConnection con = new MySqlConnection(conString);
+            string cantidad_ingresada = textBox4.Text;
+            int cantidadComparar = 0;
+            try
+            {
+                con.Open();
+                MySqlCommand cmd = new MySqlCommand("SELECT producto, precio, cantidad, ID FROM  compañia.inventario WHERE producto = @vproducto", con);
+                cmd.Parameters.AddWithValue("@vproducto", seleccion_producto);
+                MySqlDataReader registro = cmd.ExecuteReader();
+                //da.Fill(dt);
+                if (registro.Read())
+                {
+                    textBox5.Text = registro["precio"].ToString();
+                    cantidadComparar = int.Parse(registro["cantidad"].ToString());
+                    textBox1.Text = registro["ID"].ToString();
+
+
+                }
+                else
+                {
+                    MessageBox.Show("No existe precio");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al cargar precio: " + ex.Message);
+            }
+            finally
+            {
+                con.Close();
+            }
+            
+            if (textBox4.Text != "")
+            {
+                double cantidad_calcular = double.Parse(textBox4.Text);
+                if (cantidad_calcular <= cantidadComparar)
+                {
+                    double precio_calcular = double.Parse(textBox5.Text);
+                    double resultado = cantidad_calcular * precio_calcular;
+                    textBox6.Text = resultado.ToString();
+                }
+                else
+                {
+                    MessageBox.Show("La cantidad ingresada es superior a lo que se encuentran en existencia");
+                }
+                
+                
+            }
+            else
+            {
+                double precio_calcular = double.Parse(textBox5.Text);
+                textBox6.Text = precio_calcular.ToString();
+            }
+            
+        }
+
+        private void button4_KeyDown(object sender, KeyEventArgs e)
         {
 
         }
+        
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if(comboBox3.SelectedItem != null && textBox4.Text != "" && textBox5.Text != "" && textBox6.Text != "") 
+                {
+                    string nombreProducto = comboBox3.SelectedItem.ToString();
+                    listaVenta[fila, 0] = textBox1.Text;
+                    listaVenta[fila, 1] = nombreProducto;
+                    listaVenta[fila, 2] = textBox4.Text;
+                    listaVenta[fila, 3] = textBox5.Text;
+                    listaVenta[fila, 4] = textBox6.Text;
+                    
+                    tablaPrinciapal.Rows.Add(listaVenta[fila, 0], listaVenta[fila, 1], listaVenta[fila, 2], listaVenta[fila, 3], listaVenta[fila, 4]);
+                    fila++;                
+                    comboBox3.ValueMember = "";
+                    textBox4.Text = "";
+                    textBox5.Text = "";
+                    textBox6.Text = "";
+
+                }
+                else
+                {
+                    MessageBox.Show("Ingrese todos los datos necesarios");
+                }
+            }
+            catch 
+            {
+
+            }
+        }
+
     }
+
 }
+

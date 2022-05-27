@@ -53,12 +53,12 @@ namespace ProyectoFinal_login
                     this.Hide();
                 }
             }*/
-            //Hecho por Jhonatan
+
             Form1 Entrada = new Form1();
             try
             {
                 con.Open();
-                MySqlCommand cmd = new MySqlCommand("SELECT usuario, contraseña FROM compania_trabajadores.usuario WHERE usuario = @vusuario AND contraseña = @vcontraseña ", con);
+                MySqlCommand cmd = new MySqlCommand("SELECT usuario, contraseña FROM  compañia.trabajadores WHERE usuario = @vusuario AND contraseña = @vcontraseña ", con);
                 cmd.Parameters.AddWithValue("@vusuario", textBox1.Text);
                 cmd.Parameters.AddWithValue("@vcontraseña", textBox2.Text);
                 MySqlDataAdapter da = new MySqlDataAdapter(cmd);

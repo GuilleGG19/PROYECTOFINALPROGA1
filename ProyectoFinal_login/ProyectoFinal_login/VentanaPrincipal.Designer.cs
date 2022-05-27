@@ -39,17 +39,16 @@
             this.comboBox3 = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
             this.textBox6 = new System.Windows.Forms.TextBox();
             this.textBox4 = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.textBox5 = new System.Windows.Forms.TextBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.button4 = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.tablaInventario = new System.Windows.Forms.DataGridView();
             this.tablaPrinciapal = new System.Windows.Forms.DataGridView();
             this.button10 = new System.Windows.Forms.Button();
             this.button9 = new System.Windows.Forms.Button();
@@ -69,11 +68,17 @@
             this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.button6 = new System.Windows.Forms.Button();
             this.button7 = new System.Windows.Forms.Button();
+            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.producto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.precio = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.subtotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel5.SuspendLayout();
             this.panel4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.tablaInventario)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tablaPrinciapal)).BeginInit();
             this.SuspendLayout();
             // 
@@ -84,6 +89,7 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1130, 58);
             this.panel1.TabIndex = 0;
+            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // button5
             // 
@@ -135,6 +141,7 @@
             this.button1.TabIndex = 0;
             this.button1.Text = "Compras";
             this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // panel3
             // 
@@ -152,11 +159,9 @@
             this.panel5.Controls.Add(this.comboBox3);
             this.panel5.Controls.Add(this.label1);
             this.panel5.Controls.Add(this.label6);
-            this.panel5.Controls.Add(this.textBox3);
             this.panel5.Controls.Add(this.textBox6);
             this.panel5.Controls.Add(this.textBox4);
             this.panel5.Controls.Add(this.label2);
-            this.panel5.Controls.Add(this.label3);
             this.panel5.Controls.Add(this.label5);
             this.panel5.Controls.Add(this.textBox5);
             this.panel5.Controls.Add(this.textBox1);
@@ -175,6 +180,7 @@
             this.comboBox3.Name = "comboBox3";
             this.comboBox3.Size = new System.Drawing.Size(209, 21);
             this.comboBox3.TabIndex = 13;
+            this.comboBox3.SelectedIndexChanged += new System.EventHandler(this.comboBox3_SelectedIndexChanged);
             // 
             // label1
             // 
@@ -188,29 +194,23 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(853, 53);
+            this.label6.Location = new System.Drawing.Point(670, 49);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(43, 13);
             this.label6.TabIndex = 12;
             this.label6.Text = "Amount";
             // 
-            // textBox3
-            // 
-            this.textBox3.Location = new System.Drawing.Point(488, 48);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(80, 20);
-            this.textBox3.TabIndex = 6;
-            // 
             // textBox6
             // 
-            this.textBox6.Location = new System.Drawing.Point(902, 49);
+            this.textBox6.Enabled = false;
+            this.textBox6.Location = new System.Drawing.Point(719, 45);
             this.textBox6.Name = "textBox6";
             this.textBox6.Size = new System.Drawing.Size(70, 20);
             this.textBox6.TabIndex = 11;
             // 
             // textBox4
             // 
-            this.textBox4.Location = new System.Drawing.Point(629, 49);
+            this.textBox4.Location = new System.Drawing.Point(446, 45);
             this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(100, 20);
             this.textBox4.TabIndex = 7;
@@ -224,19 +224,10 @@
             this.label2.TabIndex = 1;
             this.label2.Text = "Codigo";
             // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(450, 51);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(32, 13);
-            this.label3.TabIndex = 5;
-            this.label3.Text = "UOM";
-            // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(735, 51);
+            this.label5.Location = new System.Drawing.Point(552, 47);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(37, 13);
             this.label5.TabIndex = 10;
@@ -244,13 +235,15 @@
             // 
             // textBox5
             // 
-            this.textBox5.Location = new System.Drawing.Point(778, 48);
+            this.textBox5.Enabled = false;
+            this.textBox5.Location = new System.Drawing.Point(595, 44);
             this.textBox5.Name = "textBox5";
             this.textBox5.Size = new System.Drawing.Size(70, 20);
             this.textBox5.TabIndex = 8;
             // 
             // textBox1
             // 
+            this.textBox1.Enabled = false;
             this.textBox1.Location = new System.Drawing.Point(64, 46);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(100, 20);
@@ -258,17 +251,19 @@
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(385, 45);
+            this.button4.Location = new System.Drawing.Point(818, 42);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(60, 23);
             this.button4.TabIndex = 4;
             this.button4.Text = "Cal";
             this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
+            this.button4.KeyDown += new System.Windows.Forms.KeyEventHandler(this.button4_KeyDown);
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(574, 52);
+            this.label4.Location = new System.Drawing.Point(391, 48);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(49, 13);
             this.label4.TabIndex = 9;
@@ -277,6 +272,7 @@
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.panel4.Controls.Add(this.tablaInventario);
             this.panel4.Controls.Add(this.tablaPrinciapal);
             this.panel4.Controls.Add(this.button10);
             this.panel4.Controls.Add(this.button9);
@@ -286,17 +282,37 @@
             this.panel4.Size = new System.Drawing.Size(981, 404);
             this.panel4.TabIndex = 13;
             // 
+            // tablaInventario
+            // 
+            this.tablaInventario.AllowUserToAddRows = false;
+            this.tablaInventario.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.tablaInventario.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
+            this.tablaInventario.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.tablaInventario.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.tablaInventario.GridColor = System.Drawing.SystemColors.ControlLightLight;
+            this.tablaInventario.Location = new System.Drawing.Point(12, 41);
+            this.tablaInventario.Name = "tablaInventario";
+            this.tablaInventario.RowHeadersVisible = false;
+            this.tablaInventario.Size = new System.Drawing.Size(945, 340);
+            this.tablaInventario.TabIndex = 5;
+            this.tablaInventario.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.tablaInventario_CellContentClick);
+            // 
             // tablaPrinciapal
             // 
             this.tablaPrinciapal.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.tablaPrinciapal.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
             this.tablaPrinciapal.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.tablaPrinciapal.Location = new System.Drawing.Point(11, 44);
+            this.tablaPrinciapal.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.id,
+            this.producto,
+            this.cantidad,
+            this.precio,
+            this.subtotal});
+            this.tablaPrinciapal.Location = new System.Drawing.Point(6, 41);
             this.tablaPrinciapal.Name = "tablaPrinciapal";
             this.tablaPrinciapal.RowHeadersVisible = false;
             this.tablaPrinciapal.Size = new System.Drawing.Size(955, 342);
             this.tablaPrinciapal.TabIndex = 4;
-            this.tablaPrinciapal.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.tablaPrinciapal_CellContentClick);
             // 
             // button10
             // 
@@ -327,9 +343,11 @@
             this.button8.TabIndex = 1;
             this.button8.Text = "Añadir/Actualizar";
             this.button8.UseVisualStyleBackColor = false;
+            this.button8.Click += new System.EventHandler(this.button8_Click);
             // 
             // textBox7
             // 
+            this.textBox7.Enabled = false;
             this.textBox7.Location = new System.Drawing.Point(1149, 213);
             this.textBox7.Name = "textBox7";
             this.textBox7.Size = new System.Drawing.Size(100, 20);
@@ -337,6 +355,7 @@
             // 
             // textBox8
             // 
+            this.textBox8.Enabled = false;
             this.textBox8.Location = new System.Drawing.Point(1149, 272);
             this.textBox8.Name = "textBox8";
             this.textBox8.Size = new System.Drawing.Size(100, 20);
@@ -344,6 +363,7 @@
             // 
             // textBox9
             // 
+            this.textBox9.Enabled = false;
             this.textBox9.Location = new System.Drawing.Point(1149, 331);
             this.textBox9.Name = "textBox9";
             this.textBox9.Size = new System.Drawing.Size(100, 20);
@@ -456,6 +476,31 @@
             this.button7.Text = "Cancelar";
             this.button7.UseVisualStyleBackColor = true;
             // 
+            // id
+            // 
+            this.id.HeaderText = "ID";
+            this.id.Name = "id";
+            // 
+            // producto
+            // 
+            this.producto.HeaderText = "Producto";
+            this.producto.Name = "producto";
+            // 
+            // cantidad
+            // 
+            this.cantidad.HeaderText = "Cantidad";
+            this.cantidad.Name = "cantidad";
+            // 
+            // precio
+            // 
+            this.precio.HeaderText = "Precio";
+            this.precio.Name = "precio";
+            // 
+            // subtotal
+            // 
+            this.subtotal.HeaderText = "Subtotal";
+            this.subtotal.Name = "subtotal";
+            // 
             // VentanaPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -481,6 +526,7 @@
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Name = "VentanaPrincipal";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "VentanaPrincipal";
             this.Load += new System.EventHandler(this.VentanaPrincipal_Load);
             this.panel1.ResumeLayout(false);
@@ -489,6 +535,7 @@
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
             this.panel4.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.tablaInventario)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tablaPrinciapal)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -510,8 +557,6 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox textBox5;
         private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label2;
@@ -538,5 +583,11 @@
         private System.Windows.Forms.Button button8;
         private System.Windows.Forms.DataGridView tablaPrinciapal;
         private System.Windows.Forms.ComboBox comboBox3;
+        private System.Windows.Forms.DataGridView tablaInventario;
+        private System.Windows.Forms.DataGridViewTextBoxColumn id;
+        private System.Windows.Forms.DataGridViewTextBoxColumn producto;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cantidad;
+        private System.Windows.Forms.DataGridViewTextBoxColumn precio;
+        private System.Windows.Forms.DataGridViewTextBoxColumn subtotal;
     }
 }
