@@ -13,6 +13,7 @@ namespace ProyectoFinal_login
             InitializeComponent();
             cargar_datos_combo_box ();
             tablaInventario.Hide();
+            historial.Hide();
         }
         string[,] listaVenta = new string[200, 6];
         int fila = 0;
@@ -49,6 +50,7 @@ namespace ProyectoFinal_login
         private void button3_Click(object sender, EventArgs e)
         {
             tablaPrinciapal.Hide();
+            resultado.Hide();
             tablaInventario.Show();
             databainvetario();
         }
@@ -76,6 +78,7 @@ namespace ProyectoFinal_login
         private void button1_Click(object sender, EventArgs e)
         {
             tablaInventario.Hide();
+            resultado.Hide();
             tablaPrinciapal.Show();
         }
 
@@ -199,6 +202,7 @@ namespace ProyectoFinal_login
                     tablaPrinciapal.Rows.Add(listaVenta[fila, 0], listaVenta[fila, 1], listaVenta[fila, 2], listaVenta[fila, 3], listaVenta[fila, 4]);
                     fila++;                
                     comboBox3.ValueMember = "";
+                    textBox1.Text = "";
                     textBox4.Text = "";
                     textBox5.Text = "";
                     textBox6.Text = "";
@@ -213,8 +217,59 @@ namespace ProyectoFinal_login
             {
 
             }
+            totalPagar();
+
+        }
+        private void totalPagar()
+        {
+            double total = 0;
+            foreach (DataGridViewRow row in tablaPrinciapal.Rows)
+            {
+                total += Convert.ToDouble(row.Cells["subtotal"].Value);
+            }
+            textBox2.Text = total.ToString();
         }
 
+        private void tablaPrinciapal_SelectionChanged(object sender, EventArgs e)
+        {
+            var row = (sender as DataGridView).CurrentRow;
+            comboBox3.SelectedItem = null;
+            textBox1.Text = tablaPrinciapal.CurrentRow.Cells[0].Value.ToString();
+            textBox4.Text = tablaPrinciapal.CurrentRow.Cells[2].Value.ToString();
+            textBox5.Text = tablaPrinciapal.CurrentRow.Cells[3].Value.ToString();
+            textBox6.Text = tablaPrinciapal.CurrentRow.Cells[4].Value.ToString();
+            textBox7.Text = tablaPrinciapal.CurrentRow.Cells[4].Value.ToString();
+
+        }
+
+        private void button9_Click(object sender, EventArgs e)
+        {
+            int pos = tablaPrinciapal.CurrentRow.Index;
+            tablaPrinciapal.Rows.RemoveAt(pos);
+            totalPagar();
+        }
+
+        private void label12_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            tablaPrinciapal.Rows.Clear();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            tablaPrinciapal.Hide();
+            tablaInventario.Hide();
+            historial.Show();
+            textBox1.Text = "";
+            textBox4.Text = "";
+            textBox5.Text = "";
+            textBox6.Text = "";
+
+        }
     }
 
 }
