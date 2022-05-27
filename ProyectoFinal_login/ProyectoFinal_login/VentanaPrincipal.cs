@@ -22,7 +22,7 @@ namespace ProyectoFinal_login
         private void databainvetario()
         {
             //hecho por jefferson
-            string consulta = "select * from  compañia.inventario;";
+            string consulta = "select * from  compania_trabajadores.inventario;";
             MySqlConnection con = new MySqlConnection("datasource=localhost;port=3306;username=root;");
             MySqlCommand command = new MySqlCommand(consulta, con);
             try
@@ -84,16 +84,7 @@ namespace ProyectoFinal_login
 
         private void comboBox3_SelectedIndexChanged(object sender, EventArgs e)
         {
-            MySqlConnection con = new MySqlConnection("datasource=localhost;port=3306;username=root;");
-            MySqlCommand comando = new MySqlCommand("SELECT * FROM  compañia.inventario", con);
-            con.Open();
-            MySqlDataReader registro = comando.ExecuteReader();
-
-            while (registro.Read())
-            {
-                comboBox3.Items.Add(registro["producto"].ToString());
-            }
-            con.Close();
+            
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)
@@ -103,13 +94,22 @@ namespace ProyectoFinal_login
 
         private void VentanaPrincipal_Load(object sender, EventArgs e)
         {
-            
+            MySqlConnection con = new MySqlConnection("datasource=localhost;port=3306;username=root;");
+            MySqlCommand comando = new MySqlCommand("SELECT * FROM  compania_trabajadores.inventario", con);
+            con.Open();
+            MySqlDataReader registro = comando.ExecuteReader();
+
+            while (registro.Read())
+            {
+                comboBox3.Items.Add(registro["producto"].ToString());
+            }
+            con.Close();
         }
         private void cargar_datos_combo_box()
         {
             string conString = "datasource=localhost;port=3306;username=root;";
             MySqlConnection con = new MySqlConnection(conString);
-            MySqlCommand comando = new MySqlCommand("SELECT * FROM compañia.inventario", con);
+            MySqlCommand comando = new MySqlCommand("SELECT * FROM compania_trabajadores.inventario", con);
             con.Open();
             MySqlDataReader registro = comando.ExecuteReader();
             while (registro.Read())
@@ -130,7 +130,7 @@ namespace ProyectoFinal_login
             try
             {
                 con.Open();
-                MySqlCommand cmd = new MySqlCommand("SELECT producto, precio, cantidad, ID FROM  compañia.inventario WHERE producto = @vproducto", con);
+                MySqlCommand cmd = new MySqlCommand("SELECT producto, precio, cantidad, codigo FROM  compania_trabajadores.inventario WHERE producto = @vproducto", con);
                 cmd.Parameters.AddWithValue("@vproducto", seleccion_producto);
                 MySqlDataReader registro = cmd.ExecuteReader();
                 //da.Fill(dt);
@@ -138,7 +138,7 @@ namespace ProyectoFinal_login
                 {
                     textBox5.Text = registro["precio"].ToString();
                     cantidadComparar = int.Parse(registro["cantidad"].ToString());
-                    textBox1.Text = registro["ID"].ToString();
+                    textBox1.Text = registro["codigo"].ToString();
 
 
                 }
