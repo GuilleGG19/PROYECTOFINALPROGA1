@@ -48,6 +48,7 @@
             this.button4 = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.historial = new System.Windows.Forms.DataGridView();
             this.tablaInventario = new System.Windows.Forms.DataGridView();
             this.tablaPrinciapal = new System.Windows.Forms.DataGridView();
             this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -68,15 +69,14 @@
             this.resultado = new System.Windows.Forms.Label();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.textBox3 = new System.Windows.Forms.TextBox();
-            this.historial = new System.Windows.Forms.DataGridView();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel5.SuspendLayout();
             this.panel4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.historial)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tablaInventario)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tablaPrinciapal)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.historial)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -280,6 +280,18 @@
             this.panel4.Size = new System.Drawing.Size(981, 404);
             this.panel4.TabIndex = 13;
             // 
+            // historial
+            // 
+            this.historial.AllowUserToAddRows = false;
+            this.historial.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
+            this.historial.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.historial.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.historial.Enabled = false;
+            this.historial.Location = new System.Drawing.Point(14, 49);
+            this.historial.Name = "historial";
+            this.historial.Size = new System.Drawing.Size(943, 295);
+            this.historial.TabIndex = 6;
+            // 
             // tablaInventario
             // 
             this.tablaInventario.AllowUserToAddRows = false;
@@ -356,7 +368,7 @@
             this.button8.Name = "button8";
             this.button8.Size = new System.Drawing.Size(104, 23);
             this.button8.TabIndex = 1;
-            this.button8.Text = "Añadir/Actualizar";
+            this.button8.Text = "Añadir";
             this.button8.UseVisualStyleBackColor = false;
             this.button8.Click += new System.EventHandler(this.button8_Click);
             // 
@@ -419,6 +431,7 @@
             this.button6.TabIndex = 22;
             this.button6.Text = "Guardar";
             this.button6.UseVisualStyleBackColor = true;
+            this.button6.Click += new System.EventHandler(this.button6_Click);
             // 
             // button7
             // 
@@ -454,18 +467,6 @@
             this.textBox3.Size = new System.Drawing.Size(115, 20);
             this.textBox3.TabIndex = 26;
             // 
-            // historial
-            // 
-            this.historial.AllowUserToAddRows = false;
-            this.historial.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
-            this.historial.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.historial.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.historial.Enabled = false;
-            this.historial.Location = new System.Drawing.Point(14, 49);
-            this.historial.Name = "historial";
-            this.historial.Size = new System.Drawing.Size(943, 295);
-            this.historial.TabIndex = 6;
-            // 
             // VentanaPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -496,9 +497,9 @@
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
             this.panel4.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.historial)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tablaInventario)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tablaPrinciapal)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.historial)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
