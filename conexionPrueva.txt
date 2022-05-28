@@ -1,0 +1,26 @@
+public abstract class DConexion
+{
+    public string Server { get; set; }
+    public string User { get; set; }
+    public string Password { get; set; }
+    public string DB { get; set; }
+    public string Port { get; set; }
+
+    private readonly string conexionstring;
+
+    public DConexion()
+    {
+        this.Server = ConfigurationManager.AppSettings["host"];
+        this.Port = ConfigurationManager.AppSettings["port"];
+        this.DB = ConfigurationManager.AppSettings["database"];
+        this.User = ConfigurationManager.AppSettings["user"];
+        this.Password = ConfigurationManager.AppSettings["pass"];
+
+        conexionstring = "server=" + Server + ";port=" + Port + ";database=" + DB + ";uid=" + User + ";pwd=" + Password + ";";
+    }
+
+    protected MySqlConnection GetConexion()
+    {
+        return new MySqlConnection(conexionstring);
+    }          
+}
