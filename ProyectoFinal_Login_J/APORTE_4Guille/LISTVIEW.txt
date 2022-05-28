@@ -1,0 +1,29 @@
+ private void button10_Click(object sender, EventArgs e)
+        {
+            Historial his1 = new Historial();
+        
+
+            //Validando
+            if (textBox3.Text == "")
+                MessageBox.Show("Debe ingresar nombre del cliente");
+            else if (comboBox1.SelectedIndex == -1)
+                MessageBox.Show("Elija Metodo de pago");
+            else if (textBox2.Text == "")
+                MessageBox.Show("No se puede realizar esta operacion");
+            else
+            {
+
+                string cliente = textBox3.Text;
+                int cantidad = Convert.ToInt32(textBox2.Text);
+                string pago = comboBox1.Text;
+
+                //impresion de datos
+                ListViewItem fila = new ListViewItem(cliente);
+                fila.SubItems.Add(cliente.ToString());
+                fila.SubItems.Add(cantidad.ToString());
+                fila.SubItems.Add(pago.ToString());
+
+                lvhistorial.Items.Add(fila);
+                
+
+            }
